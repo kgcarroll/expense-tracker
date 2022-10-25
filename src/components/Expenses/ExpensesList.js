@@ -8,14 +8,15 @@ const ExpensesList = (props) => {
         return <h2 className="expenses-list__fallback">No Expense Found!</h2>;
     }
 
-    return <ul className="epensese-list">
+    return <ul className="expenses-list">
         {props.items.map((expense) => (
-            <ExpenseItem
-                key={expense.id} 
-                title={expense.title}
-                amount={expense.amount}
-                date={expense.date}
-            />
+            <li key={expense.id}>
+                <ExpenseItem            
+                    title={expense.title}
+                    amount={expense.amount}
+                    date={expense.date}
+                />
+            </li>
         ))}
     </ul>
 };
